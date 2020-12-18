@@ -14,9 +14,9 @@ export default function reducer(state, action) {
                 pictures: action.payload
             }
         case types.PICTURE_LIKED:
-            const { pictures, user } = state
-            const index = pictures.findIndex(({ _id }) => _id === action.payload._id)
-            pictures[index] = { ...pictures[index], likedBy: [...pictures[index].likedBy, user._id] }
+            const { pictures } = state;
+            const index = pictures.findIndex(({ picsum_id }) => picsum_id === action.payload.picsum_id)
+            pictures[index] = { ...pictures[index], ...action.payload }
             return {
                 ...state,
                 pending: false,
