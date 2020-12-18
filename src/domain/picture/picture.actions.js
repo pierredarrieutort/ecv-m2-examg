@@ -1,4 +1,4 @@
-import { getPictures, getPictureById, likePicture } from './picture.service';
+import { getPictures, getPictureById, likePicture, unLikePicture } from './picture.service';
 
 export const types = {
     PICTURE_STARTED: 'PICTURE_STARTED',
@@ -53,4 +53,11 @@ function _onError(error) {
         type: types.PICTURE_FAILED,
         payload: error
     }
+}
+
+export function unLikePictureById(dispatch, pictureId) {
+    dispatch(_started());
+    unLikePicture(pictureId)
+        .then(picture => dispatch(_onLiked(picture)))
+        .catch(error => dispatch(_onError(error)));
 }
