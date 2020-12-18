@@ -48,5 +48,5 @@ export function unLikePicture(pictureID) {
             }
             return res
         })
-        .then(res => res.json());
+        .then(res => res.json())
 }
