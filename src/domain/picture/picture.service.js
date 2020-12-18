@@ -51,7 +51,7 @@ export function unLikePicture(pictureID) {
 
 export function commentPicture(pictureID, data) {
     return fetch(`/api/pictures/comment/${pictureID}`, {
-        method: 'PUT',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })
