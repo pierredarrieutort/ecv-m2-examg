@@ -56,8 +56,8 @@ function _onError(error) {
 }
 
 export function unLikePictureById(dispatch, pictureId) {
-    dispatch(_started());
+    dispatch(_started())
     unLikePicture(pictureId)
         .then(picture => dispatch(_onLiked(picture)))
-        .catch(error => dispatch(_onError(error)));
+        .catch(error => dispatch(_onError(error)))
 }
