@@ -38,11 +38,10 @@ export function login(data) {
         .then(res => res.json())
 }
 
-export function logout(data) {
+export function logout() {
     return fetch('/api/logout/', {
         method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        headers: { 'Content-Type': 'application/json' }
     })
 }
 
