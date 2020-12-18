@@ -34,13 +34,11 @@ export function likePicture(pictureID) {
             }
             return res
         })
-        .then(res => res.json());
+        .then(res => res.json())
 }
 
 export function unLikePicture(pictureID) {
-    return fetch(`/api/pictures/${pictureID}/unlike`, {
-        method: 'PUT'
-    })
+    return fetch(`/api/pictures/${pictureID}/unlike`, { method: 'PUT' })
         .then(async res => {
             if (res.status !== 200 && res.status !== 201) {
                 const { message } = await res.json()
@@ -54,9 +52,7 @@ export function unLikePicture(pictureID) {
 export function commentPicture(pictureID, data) {
     return fetch(`/api/pictures/${pictureID}/comment`, {
         method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })
         .then(async res => {
@@ -66,5 +62,5 @@ export function commentPicture(pictureID, data) {
             }
             return res
         })
-        .then(res => res.json());
+        .then(res => res.json())
 }

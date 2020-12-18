@@ -17,9 +17,9 @@ export function Card({ picture }) {
             LikePictureById(dispatch, pictureId)
     }
 
-    const onChange = (e) => {
+    const onChange = ({target}) => {
         setComment({
-            comment: e.target.value
+            comment: target.value
         })
     }
 
@@ -51,7 +51,7 @@ export function Card({ picture }) {
                     )}
                     <div>
                         <input name="comment" placeholder="Add a comment..." type="text" onChange={onChange} />
-                        <button onClick={() => { postComment(picture.id); }}>Publish</button>
+                        <button onClick={() => { postComment(picture.id) }}>Publish</button>
                     </div>
                 </div>
             </div>
